@@ -523,7 +523,7 @@ class mavfile(object):
                 return None
             if type is not None and not m.get_type() in type:
                 continue
-            if not evaluate_condition(condition, self.messages):
+            if not evaluate_condition(condition, self.sysid_state[m.get_srcSystem()].messages):
                 continue
             return m
 
